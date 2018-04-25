@@ -20,13 +20,16 @@ public class PwdEditText extends RelativeLayout implements TextWatcher, View.OnC
     private ImageView imageView;
     private TextView textView;
     private boolean isClick = false;
+    private final int PaddingTop = 10;
+    private final int PaddingBottom = 16;
+    private final int MarginRight = 10;
     private Context mContext;
 
     public PwdEditText(Context context, AttributeSet attrs) {
         super(context, attrs);
         editText = new EditText(context,attrs);
         this.mContext = context;
-
+        initWithAttrs(context,attrs);
     }
 
     public PwdEditText(Context context, AttributeSet attrs, int defStyleAttr) {
