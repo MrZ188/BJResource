@@ -59,7 +59,6 @@ public class PwdEditText extends RelativeLayout implements TextWatcher, View.OnC
     }
 
     private void initWithAttrs(Context context,AttributeSet attrs){
-
         LayoutParams params = new LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         addView(editText,params);
     }
