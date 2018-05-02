@@ -4,6 +4,7 @@ import android.content.Context;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
@@ -24,16 +25,17 @@ public class PwdEditText extends RelativeLayout implements TextWatcher, View.OnC
     private final int PaddingBottom = 16;
     private final int MarginRight = 10;
     private Context mContext;
-
     public PwdEditText(Context context, AttributeSet attrs) {
         super(context, attrs);
-        editText = new EditText(context,attrs);
+        editText = new EditText(context, attrs);      //把PwdEditText的属性给到edtText？
         this.mContext = context;
-        initWithAttrs(context,attrs);
+        initWithAttrs(context, attrs);
     }
-
     public PwdEditText(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
+        editText = new EditText(context,attrs,defStyleAttr);
+        this.mContext = context;
+        initWithAttrs(context,attrs);
     }
 
     @Override
@@ -64,5 +66,7 @@ public class PwdEditText extends RelativeLayout implements TextWatcher, View.OnC
     private void initWithAttrs(Context context,AttributeSet attrs){
         LayoutParams params = new LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         addView(editText,params);
+        LayoutParams params1 = new LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT,ViewGroup.LayoutParams.WRAP_CONTENT);
+//        imageView = new ;
     }
 }

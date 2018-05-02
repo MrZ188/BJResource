@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">MyResource</string>
+    <string name="hello">你好</string>
+    <string name="chinese">中文</string>
+    <string name="english">英文</string>
+    <string name="dialog_title">一个dialog标题</string>
+    <string name="dialog_context">帽儿破，鞋儿破，身上的袈裟破~~~</string>
+    <string name="btn_dialog">弹出dialog</string>
+    <string name="btn_sure">确定</string>
+    <string name="btn_cancel">取消</string>
 </resources>

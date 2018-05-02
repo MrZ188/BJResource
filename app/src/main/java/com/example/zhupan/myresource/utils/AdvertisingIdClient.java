@@ -15,8 +15,23 @@ import java.io.IOException;
 import java.util.concurrent.LinkedBlockingQueue;
 
 public class AdvertisingIdClient {
+    //获取
+//     new Thread(new Runnable() {
+//        public void run() {
+//            try {
+//                AdvertisingIdClient.AdInfo adInfo = AdvertisingIdClient
+//                        .getAdvertisingIdInfo(MainActivity.this);
+//                String advertisingId = adInfo.getId();
+//                Log.i(TAG, "advertisingId" + advertisingId);
+//            } catch (Exception e) {
+//                Log.i(TAG, "run:"+e.getLocalizedMessage());
+//                e.printStackTrace();
+//            }
+//        }
+//    }).start();
     public static final class AdInfo {
         private final String advertisingId;
+
         private final boolean limitAdTrackingEnabled;
 
         AdInfo(String advertisingId, boolean limitAdTrackingEnabled) {
