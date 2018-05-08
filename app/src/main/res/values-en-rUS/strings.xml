@@ -5,6 +5,8 @@
     <string name="chinese">chinese</string>
     <string name="english">english</string>
     <string name="dialog_title">a dialog title</string>
+    <string name="dialog_context">hat break,shoes break,clothes on body break~~</string>
+    <string name="btn_dialog">dialog</string>
     <string name="btn_sure">sure</string>
     <string name="btn_cancel">cancel</string>
 </resources>
