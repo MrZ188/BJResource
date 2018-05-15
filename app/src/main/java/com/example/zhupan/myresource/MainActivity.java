@@ -56,7 +56,8 @@ public class MainActivity extends BaseActivity {
                 chooseEnglish();
                 break;
             case R.id.btn_dialog:
-                TipsDialog dialog = new TipsDialog(MainActivity.this, new TipsDialog.DialogCallBack() {
+                TipsDialog dialog = new TipsDialog(MainActivity.this,getString(R.string.dialog_title2),getString(R.string.dialog_context2),"好"
+                        ,"不好",new TipsDialog.DialogCallBack() {
                     @Override
                     public void negativeClick() {
                         Log.i(TAG, "negativeClick: ");
@@ -67,9 +68,6 @@ public class MainActivity extends BaseActivity {
                         Log.i(TAG, "positiveClick: ");
                     }
                 });
-                dialog.setTitle(getString(R.string.dialog_title2));
-                dialog.setContext(getString(R.string.dialog_context2));
-                dialog.show();
                 dialog.setCanceledOnTouchOutside(true);
                 break;
             case R.id.btn_sp:

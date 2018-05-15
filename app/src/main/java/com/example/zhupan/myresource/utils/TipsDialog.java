@@ -44,12 +44,17 @@ public class TipsDialog extends Dialog {
     private Context mContext;
     private TextView txtTitle,txtContext,txtNegativeButton,txtPositiveButton;
     private DialogCallBack callBack;
-    public TipsDialog(Context context,DialogCallBack callBack) {
+    public TipsDialog(Context context,String title,String content,String positiveBtn,String negativeBtn,DialogCallBack callBack) {
         super(context);
         this.mContext = context;
         this.setCancelable(false);
         this.callBack = callBack;
         InitUI(mContext);
+        setTitle(title);
+        setContent(content);
+        setPositiveButton(positiveBtn);
+        setNegativeButton(negativeBtn);
+        show();
     }
     private void InitUI(Context context){
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -80,10 +85,15 @@ public class TipsDialog extends Dialog {
     public void setTitle(String title){
         txtTitle.setText(title);
     }
-    public void setContext(String context){
-        txtContext.setText(context);
+    public void setContent(String content){
+        txtContext.setText(content);
     }
-
+    public void setPositiveButton(String positiveButton){
+        txtPositiveButton.setText(positiveButton);
+    }
+    public void setNegativeButton(String negativeButton){
+        txtNegativeButton.setText(negativeButton);
+    }
     public void setNegativeClick(){
         dismiss();
         callBack.negativeClick();
