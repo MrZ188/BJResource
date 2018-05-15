@@ -31,4 +31,14 @@
         android:text="@string/btn_dialog"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
+    <Button
+        android:id="@+id/btn_sp"
+        android:text="sp存入"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <Button
+        android:id="@+id/btn_sp2"
+        android:text="sp取出"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 </LinearLayout>

@@ -8,4 +8,7 @@
     <string name="btn_dialog">弹出dialog</string>
     <string name="btn_sure">确定</string>
     <string name="btn_cancel">取消</string>
+    <string name="btn_one_store">one store pay</string>
+    <string name="dialog_title2">另一个dialog标题</string>
+    <string name="dialog_context2">我欲成仙，快乐齐天~~</string>
 </resources>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">MyResource</string>
+    <string name="hello">hello</string>
+    <string name="chinese">cn</string>
+    <string name="english">en</string>
+    <string name="dialog_title">a dialog title</string>
+    <string name="dialog_context">hat is broken,shoes are broken~~</string>
+    <string name="btn_dialog">dialog</string>
+    <string name="btn_sure">OK</string>
+    <string name="btn_cancel">Cancel</string>
+</resources>

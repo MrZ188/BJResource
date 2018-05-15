@@ -42,11 +42,13 @@ public class TipsDialog extends Dialog {
     private final int Size_Max = 850;
     private View divideView;
     private Context mContext;
-    private TextView txtTitle;
-    public TipsDialog(Context context) {
+    private TextView txtTitle,txtContext,txtNegativeButton,txtPositiveButton;
+    private DialogCallBack callBack;
+    public TipsDialog(Context context,DialogCallBack callBack) {
         super(context);
         this.mContext = context;
         this.setCancelable(false);
+        this.callBack = callBack;
         InitUI(mContext);
     }
     private void InitUI(Context context){
@@ -54,14 +56,41 @@ public class TipsDialog extends Dialog {
 
         setContentView(R.layout.dialog_tips);
         txtTitle = findViewById(R.id.txt_title);
-
+        txtContext = findViewById(R.id.txt_context);
+        txtNegativeButton = findViewById(R.id.btn_negative);
+        txtPositiveButton = findViewById(R.id.btn_positive);
+        txtPositiveButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                setPositiveClick();
+            }
+        });
+        txtNegativeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                setNegativeClick();
+            }
+        });
     }
     @Override
     public void show(){
         fitScreen();
         super.show();
     }
+    public void setTitle(String title){
+        txtTitle.setText(title);
+    }
+    public void setContext(String context){
+        txtContext.setText(context);
+    }
 
+    public void setNegativeClick(){
+        dismiss();
+        callBack.negativeClick();
+    }
+    public void setPositiveClick(){
+        callBack.positiveClick();
+    }
     public void setDialogSize(int width, int height) {
         mLayoutParams.width = width;
         mLayoutParams.height = height;
@@ -109,5 +138,10 @@ public class TipsDialog extends Dialog {
 
     public boolean isTablet(Context context) {
         return (context.getResources().getConfiguration().screenLayout & Configuration.SCREENLAYOUT_SIZE_MASK) >= Configuration.SCREENLAYOUT_SIZE_LARGE;
+    }
+
+    public interface DialogCallBack{
+      void negativeClick();
+      void positiveClick();
     }
 }

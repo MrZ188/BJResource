@@ -2,6 +2,7 @@ package com.example.zhupan.myresource;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.util.DisplayMetrics;
@@ -56,6 +57,6 @@ public class MySdk {
         configuration.locale = locale;
         Locale.setDefault(locale);
         resources.updateConfiguration(configuration,dm);
-        ( (Activity)context).recreate();
+//        ( (Activity)context).recreate();
     }
 }
