@@ -23,6 +23,7 @@ import butterknife.OnClick;
 
 public class MainActivity extends BaseActivity {
     private static final String TAG = "MainActivity";
+
     @BindView(R.id.btn_cn)
     Button btnCn;
     @BindView(R.id.btn_en)
