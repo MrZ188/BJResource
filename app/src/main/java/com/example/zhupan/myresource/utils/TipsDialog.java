@@ -22,25 +22,13 @@ import com.example.zhupan.myresource.R;
  */
 public class TipsDialog extends Dialog {
     private static final String TAG = TipsDialog.class.getCanonicalName();
-
-    private RelativeLayout mDialogLayout;
-    private TextView mTitleTextView;
-    private TextView mMessageTextView;
-    private Button mPositiveButton, mNegativeButton;
-
     private Window mDialogWindow = null;
     private WindowManager.LayoutParams mLayoutParams = null;
-
-    public boolean mIsPositiveButton = false;
-    public boolean mIsNegativeButton = false;
-
     private float Landscape_Width_Percent_Normal = 0.5f;
     private float Landscape_Height_Percent_Normal = 0.4f;
     private float Portrait_Width_Percent_Normal = 0.8f;
     private float Portrait_Height_Percent_Normal = 0.3f;
-
     private final int Size_Max = 850;
-    private View divideView;
     private Context mContext;
     private TextView txtTitle,txtContext,txtNegativeButton,txtPositiveButton;
     private DialogCallBack callBack;
@@ -54,7 +42,6 @@ public class TipsDialog extends Dialog {
         setContent(content);
         setPositiveButton(positiveBtn);
         setNegativeButton(negativeBtn);
-        show();
     }
     private void InitUI(Context context){
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
