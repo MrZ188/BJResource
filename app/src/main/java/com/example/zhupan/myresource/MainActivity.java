@@ -8,11 +8,11 @@ import android.widget.Toast;
 
 import com.example.zhupan.myresource.base.BaseActivity;
 import com.example.zhupan.myresource.config.Constants;
-import com.example.zhupan.myresource.entity.Reflect;
 import com.example.zhupan.myresource.utils.MySpUtil;
 import com.example.zhupan.myresource.utils.ReflectUtil;
 import com.example.zhupan.myresource.utils.SdUtil;
 import com.example.zhupan.myresource.utils.TipsDialog;
+import com.example.zhupan.myresource.view.comments.impl.CommentsActivity;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
@@ -53,7 +53,7 @@ public class MainActivity extends BaseActivity {
         super.onDestroy();
     }
 
-    @OnClick({R.id.btn_cn, R.id.btn_en, R.id.btn_dialog, R.id.btn_sp, R.id.btn_sp2, R.id.btn_reflect,R.id.btn_save_text})
+    @OnClick({R.id.btn_cn, R.id.btn_en, R.id.btn_dialog, R.id.btn_sp, R.id.btn_sp2, R.id.btn_reflect,R.id.btn_save_text,R.id.btn_comments})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.btn_cn:
@@ -106,6 +106,9 @@ public class MainActivity extends BaseActivity {
                 SdUtil.saveToLocal(MainActivity.this,"当今十大美女，据武林妙云斋专业统计，分别是：王翠花，赵小丫，" +
                         "刘大婶，郭大嫂，李大妈，牛桂花，黄小姐，胡晓鸡，七小八，美小十。众多美女，有的国色天香，有的小家碧玉，有的。。。真是" +
                         "争奇斗艳，风光一时无俩。");
+                break;
+            case R.id.btn_comments:
+                goTo(this, CommentsActivity.class);
                 break;
         }
     }
