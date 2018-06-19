@@ -24,3 +24,20 @@ allprojects {
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
+
+//处理依赖资源冲突问题
+subprojects {
+    project.configurations.all {
+        resolutionStrategy.eachDependency { details ->
+            if (details.requested.group == 'com.android.support'
+                    && !details.requested.name.contains('multidex') ) {
+                details.useVersion "$supportlib_version"
+            }
+        }
+    }
+}
+
+
+ext {
+    supportlib_version = '27.+'
+}

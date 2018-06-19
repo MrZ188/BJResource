@@ -8,14 +8,21 @@ import android.widget.Toast;
 
 import com.example.zhupan.myresource.base.BaseActivity;
 import com.example.zhupan.myresource.config.Constants;
+import com.example.zhupan.myresource.utils.InitViewDialog;
+import com.example.zhupan.myresource.utils.ListTest;
+import com.example.zhupan.myresource.utils.MyDialog;
 import com.example.zhupan.myresource.utils.MySpUtil;
 import com.example.zhupan.myresource.utils.ReflectUtil;
 import com.example.zhupan.myresource.utils.SdUtil;
 import com.example.zhupan.myresource.utils.TipsDialog;
 import com.example.zhupan.myresource.view.comments.impl.CommentsActivity;
+import com.twitter.sdk.android.core.Twitter;
+import com.twitter.sdk.android.tweetcomposer.TweetComposer;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
+import java.net.MalformedURLException;
+import java.net.URL;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -38,6 +45,7 @@ public class MainActivity extends BaseActivity {
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
         mySdk = MySdk.getInstant();
+        Twitter.initialize(this);   //twitter初始化
     }
 
     private void chooseChinese() {
@@ -53,7 +61,8 @@ public class MainActivity extends BaseActivity {
         super.onDestroy();
     }
 
-    @OnClick({R.id.btn_cn, R.id.btn_en, R.id.btn_dialog, R.id.btn_sp, R.id.btn_sp2, R.id.btn_reflect,R.id.btn_save_text,R.id.btn_comments})
+    @OnClick({R.id.btn_cn, R.id.btn_en, R.id.btn_dialog, R.id.btn_sp, R.id.btn_sp2, R.id.btn_reflect,R.id.btn_save_text,R.id.btn_comments,
+            R.id.btn_list_test,R.id.btn_init_dialog,R.id.btn_twitter_login,R.id.btn_twitter_share})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.btn_cn:
@@ -109,6 +118,26 @@ public class MainActivity extends BaseActivity {
                 break;
             case R.id.btn_comments:
                 goTo(this, CommentsActivity.class);
+                break;
+            case R.id.btn_list_test:
+                ListTest.listTest();
+                break;
+            case R.id.btn_init_dialog:
+                InitViewDialog initViewDialog = new InitViewDialog(this);
+                initViewDialog.show();
+                break;
+            case R.id.btn_twitter_login:
+                Log.i(TAG, "onViewClicked: "+String.valueOf(null));
+                break;
+            case R.id.btn_twitter_share:
+                try {
+                    TweetComposer.Builder builder = new TweetComposer.Builder(MainActivity.this)
+                            .url(new URL("https://www.google.com/"));
+                    builder.show();
+                } catch (MalformedURLException e) {
+                    e.printStackTrace();
+                }
+
                 break;
         }
     }

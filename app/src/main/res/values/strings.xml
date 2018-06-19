@@ -11,4 +11,7 @@
     <string name="btn_one_store">one store pay</string>
     <string name="dialog_title2">另一个dialog标题</string>
     <string name="dialog_context2">我欲成仙，快乐齐天~~</string>
+    <!--twiter的key-->
+    <string name="com.twitter.sdk.android.CONSUMER_KEY">ayVnQYgRA08qGBfszk68i3grV</string>
+    <string name="com.twitter.sdk.android.CONSUMER_SECRET">GGe1So5LmNCy0IN6D56fTdTm9GK6a05Ig4lM8AJm7mF8vvCWs9</string>
 </resources>
