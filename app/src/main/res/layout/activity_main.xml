@@ -64,13 +64,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
             <Button
-                android:id="@+id/btn_twitter_login"
-                android:text="twitter登陆"
+                android:id="@+id/btn_twitter_share"
+                android:text="twitter分享"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
             <Button
-                android:id="@+id/btn_twitter_share"
-                android:text="twitter分享"
+                android:id="@+id/btn_sqlite_test"
+                android:text="sqlite_test"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
         </LinearLayout>

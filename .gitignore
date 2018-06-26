@@ -11,3 +11,8 @@
 .externalNativeBuild
 /captures
 *.ser
+*.class
+*.apk
+bin/
+gen/
+.settings/

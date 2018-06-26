@@ -12,8 +12,10 @@ import com.example.zhupan.myresource.utils.InitViewDialog;
 import com.example.zhupan.myresource.utils.ListTest;
 import com.example.zhupan.myresource.utils.MyDialog;
 import com.example.zhupan.myresource.utils.MySpUtil;
+import com.example.zhupan.myresource.utils.MySqliteHelper;
 import com.example.zhupan.myresource.utils.ReflectUtil;
 import com.example.zhupan.myresource.utils.SdUtil;
+import com.example.zhupan.myresource.utils.SqliteDataUtil;
 import com.example.zhupan.myresource.utils.TipsDialog;
 import com.example.zhupan.myresource.view.comments.impl.CommentsActivity;
 import com.twitter.sdk.android.core.Twitter;
@@ -62,7 +64,7 @@ public class MainActivity extends BaseActivity {
     }
 
     @OnClick({R.id.btn_cn, R.id.btn_en, R.id.btn_dialog, R.id.btn_sp, R.id.btn_sp2, R.id.btn_reflect,R.id.btn_save_text,R.id.btn_comments,
-            R.id.btn_list_test,R.id.btn_init_dialog,R.id.btn_twitter_login,R.id.btn_twitter_share})
+            R.id.btn_list_test,R.id.btn_init_dialog,R.id.btn_sqlite_test,R.id.btn_twitter_share})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.btn_cn:
@@ -126,9 +128,6 @@ public class MainActivity extends BaseActivity {
                 InitViewDialog initViewDialog = new InitViewDialog(this);
                 initViewDialog.show();
                 break;
-            case R.id.btn_twitter_login:
-                Log.i(TAG, "onViewClicked: "+String.valueOf(null));
-                break;
             case R.id.btn_twitter_share:
                 try {
                     TweetComposer.Builder builder = new TweetComposer.Builder(MainActivity.this)
@@ -137,7 +136,14 @@ public class MainActivity extends BaseActivity {
                 } catch (MalformedURLException e) {
                     e.printStackTrace();
                 }
-
+                break;
+            case R.id.btn_sqlite_test:
+                SqliteDataUtil.getInstance().createDataBase(this);
+//                SqliteDataUtil.getInstance().createTable();
+//                SqliteDataUtil.getInstance().insert();
+                SqliteDataUtil.getInstance().delete();
+//                SqliteDataUtil.getInstance().update();
+                SqliteDataUtil.getInstance().select();
                 break;
         }
     }
