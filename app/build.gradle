@@ -34,4 +34,12 @@ dependencies {
     implementation 'com.twitter.sdk.android:twitter:3.1.1'             //twitter分享
     implementation 'com.twitter.sdk.android:tweet-composer:3.1.1'      //twitter分享，发布推文
 
+    implementation 'io.reactivex:rxjava:latest.integration'
+    implementation 'io.reactivex:rxandroid:latest.integration'
+
+
+    implementation 'com.squareup.retrofit2:retrofit:latest.integration'
+    implementation 'com.squareup.retrofit2:adapter-rxjava:latest.integration'
+    implementation 'com.squareup.retrofit2:converter-gson:latest.integration'
+
 }

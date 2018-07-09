@@ -73,6 +73,16 @@
                 android:text="sqlite_test"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
+            <Button
+                android:id="@+id/btn_rx_java"
+                android:text="rx_java"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <Button
+                android:id="@+id/btn_rx_android"
+                android:text="rx_android"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
         </LinearLayout>
     </ScrollView>
 </LinearLayout>
