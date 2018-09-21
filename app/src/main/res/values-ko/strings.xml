@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">MyResource</string>
+    <string name="hello">你好</string>
+    <string name="chinese">中文</string>
+    <string name="english">英文</string>
+    <string name="dialog_title">대화 제목</string>
+    <string name="dialog_context">모자가 부러지고, 신발이 부러졌으며, 몸이 부러졌다. ~~~</string>
+    <string name="btn_dialog">弹出dialog</string>
+    <string name="btn_sure">결정</string>
+    <string name="btn_cancel">취소</string>
+    <string name="btn_one_store">one store pay</string>
+    <string name="dialog_title2">다른 대화 제목</string>
+    <string name="dialog_context2">나는 요정, 행복하고 행복하고 싶다 ~ ~</string>
+    <!--twiter的key-->
+    <string name="com.twitter.sdk.android.CONSUMER_KEY">ayVnQYgRA08qGBfszk68i3grV</string>
+    <string name="com.twitter.sdk.android.CONSUMER_SECRET">GGe1So5LmNCy0IN6D56fTdTm9GK6a05Ig4lM8AJm7mF8vvCWs9</string>
+
+</resources>

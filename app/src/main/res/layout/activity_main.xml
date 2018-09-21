@@ -24,6 +24,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
             <Button
+                android:text="韩语"
+                android:id="@+id/btn_kr"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <Button
                 android:id="@+id/btn_dialog"
                 android:text="@string/btn_dialog"
                 android:layout_width="match_parent"
@@ -43,11 +49,12 @@
                 android:text="反射测试"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
+
             <Button
                 android:id="@+id/btn_save_text"
-                android:text="存text文件"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:text="存text文件" />
             <Button
                 android:id="@+id/btn_comments"
                 android:text="评论区"
@@ -81,6 +88,16 @@
             <Button
                 android:id="@+id/btn_rx_android"
                 android:text="rx_android"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <Button
+                android:text="btn_facebook"
+                android:id="@+id/btn_facebook"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <Button
+                android:text="get_mac"
+                android:id="@+id/btn_mac"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
         </LinearLayout>

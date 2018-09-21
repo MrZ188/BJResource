@@ -9,4 +9,6 @@
     <string name="btn_dialog">dialog</string>
     <string name="btn_sure">OK</string>
     <string name="btn_cancel">Cancel</string>
+    <string name="dialog_title2">another a dialog title</string>
+    <string name="dialog_context2">happy to die</string>
 </resources>

@@ -1,4 +1,6 @@
 apply plugin: 'com.android.application'
+//apply plugin: 'auto-patch-plugin'
+apply plugin: 'robust'
 android {
     compileSdkVersion 27
     defaultConfig {
@@ -41,5 +43,5 @@ dependencies {
     implementation 'com.squareup.retrofit2:retrofit:latest.integration'
     implementation 'com.squareup.retrofit2:adapter-rxjava:latest.integration'
     implementation 'com.squareup.retrofit2:converter-gson:latest.integration'
-
+    implementation 'com.meituan.robust:robust:0.3.3'
 }

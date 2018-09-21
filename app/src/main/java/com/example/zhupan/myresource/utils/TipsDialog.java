@@ -42,6 +42,7 @@ public class TipsDialog extends Dialog {
         setContent(content);
         setPositiveButton(positiveBtn);
         setNegativeButton(negativeBtn);
+        txtTitle.setText(R.string.dialog_title);
     }
     private void InitUI(Context context){
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);

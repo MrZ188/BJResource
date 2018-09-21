@@ -1,8 +1,6 @@
 package com.example.zhupan.myresource;
 
-import android.app.Activity;
 import android.content.Context;
-import android.content.Intent;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.util.DisplayMetrics;
@@ -49,6 +47,10 @@ public class MySdk {
             case Constants.EN:
                 Log.i(TAG, "updateConfiguration:en ");
                 locale = Locale.ENGLISH;
+                break;
+            case Constants.KR:
+                Log.i(TAG, "updateConfiguration:en ");
+                locale = Locale.KOREAN;
                 break;
             default:
                 locale = Locale.ENGLISH;

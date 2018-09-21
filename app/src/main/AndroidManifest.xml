@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.zhupan.myresource">
-
+    <!--<uses-sdk tools:overrideLibrary="项目包名" 可以忽略依赖的sdk version-->
+    <!--强行兼容插件版本-->
+    <uses-sdk tools:overrideLibrary="com.bojoy.collect" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
@@ -21,7 +24,6 @@
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -36,5 +38,9 @@
                 <action android:name="com.twitter.sdk.android.tweetcomposer.UPLOAD_FAILURE" />
             </intent-filter>
         </receiver>
+
+        <activity android:name=".view.languageTest.LanguageTestActivity" />
+        <activity android:name=".view.WebViewActivity"></activity>
     </application>
+
 </manifest>
