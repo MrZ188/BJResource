@@ -21,15 +21,22 @@ import com.example.zhupan.myresource.utils.InitViewDialog;
 import com.example.zhupan.myresource.utils.ListTest;
 import com.example.zhupan.myresource.utils.MySpUtil;
 import com.example.zhupan.myresource.utils.MyUtil;
+import com.example.zhupan.myresource.utils.NotificationUtil;
 import com.example.zhupan.myresource.utils.ReflectUtil;
 import com.example.zhupan.myresource.utils.SdUtil;
 import com.example.zhupan.myresource.utils.SqliteDataUtil;
 import com.example.zhupan.myresource.utils.TipsDialog;
 import com.example.zhupan.myresource.utils.ToastUtil;
+import com.example.zhupan.myresource.utils.factory.DLSFactory;
+import com.example.zhupan.myresource.view.TongXunLuActivity;
 import com.example.zhupan.myresource.view.WebViewActivity;
 import com.example.zhupan.myresource.view.languageTest.LanguageTestActivity;
 import com.twitter.sdk.android.core.Twitter;
 import com.twitter.sdk.android.tweetcomposer.TweetComposer;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
@@ -38,6 +45,7 @@ import java.net.URL;
 import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
+import java.util.UUID;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -45,6 +53,7 @@ import butterknife.OnClick;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
+import rx.Notification;
 import rx.Observable;
 import rx.Subscriber;
 import rx.schedulers.Schedulers;
@@ -92,7 +101,7 @@ public class MainActivity extends BaseActivity {
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.btn_cn:
-//                chooseChinese();
+                chooseChinese();
                 //获取
 //                new Thread(new Runnable() {
 //                    public void run() {
@@ -118,8 +127,17 @@ public class MainActivity extends BaseActivity {
 //                } catch (Exception e) {
 //                    e.printStackTrace();
 //                }
-                Timer timer = new Timer();
-                timer.scheduleAtFixedRate(new MyTask(), 1, 2000);      //隔几秒，干某事
+//                Timer timer = new Timer();
+//                timer.scheduleAtFixedRate(new MyTask(), 1, 2000);      //隔几秒，循环干某事
+//                Log.i(TAG, "onViewClicked: "+ UUID.randomUUID().toString());
+
+//                NotificationUtil.sendNotification(MainActivity.this);
+
+//                //工厂模式test
+//                DLSFactory.getInstance().createDLSTT(0);
+                //通讯录列表，挤压效果
+//                startActivity(new Intent(MainActivity.this, TongXunLuActivity.class));
+//                getSkuDetails();
                 break;
             case R.id.btn_en:
                 chooseEnglish();
@@ -359,5 +377,26 @@ public class MainActivity extends BaseActivity {
 //        } catch (PackageManager.NameNotFoundException e) {
 //            return mFacebookUrl; //要是没有安装就用普通的url
 //        }
+    }
+
+    private void getSkuDetails(){
+        try {
+            JSONArray arr = new JSONArray("[{\"productId\":\"com.gf.apcgkrkr.hwyad.google.60gy\",\"type\":\"inapp\",\"price\":\"￦11,000\",\"price_amount_micros\":11000000000,\"price_currency_code\":\"KRW\",\"title\":\"60 백옥 (운명의 사랑:궁)\",\"description\":\"11000원 결제 시 60백옥 획득 가능\"}, {\"productId\":\"com.gf.apcgkrkr.hwyad.google.6gy\",\"type\":\"inapp\",\"price\":\"￦1,100\",\"price_amount_micros\":1100000000,\"price_currency_code\":\"KRW\",\"title\":\"6백옥 (운명의 사랑:궁)\",\"description\":\"1100원 결제 시 6백옥 획득 가능\"}]");
+            JSONObject object = new JSONObject();
+            JSONObject object1 = new JSONObject();
+            JSONObject object2 = new JSONObject();
+            JSONObject object3 = new JSONObject();
+            for(int i=0;i<arr.length();i++){
+                object1.put(arr.getJSONObject(i).getString("productId"),arr.getJSONObject(i));
+            }
+            object3.put("shopItems",object1);
+            object3.put("msg","doGetAllShopItemsParamsSuccess");
+            object3.put("code","100");
+            object.put("obj",object3);
+            object2.put("eventData",object);
+            Log.i(TAG, "getSkuDetails: "+object2);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
     }
 }

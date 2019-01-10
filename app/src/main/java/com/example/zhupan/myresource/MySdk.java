@@ -13,6 +13,7 @@ import java.util.Locale;
 public class MySdk {
     private static final String TAG = MySdk.class.getSimpleName();
     private static MySdk sdk;
+
     private MySdk() {
     }
 
@@ -29,20 +30,20 @@ public class MySdk {
         return sdk;
     }
 
-    public void setLanguage(Context context,String language) {
-        updateConfiguration(context,language);
+    public void setLanguage(Context context, String language) {
+        updateConfiguration(context, language);
     }
-
+    static Resources resources2;
     private void updateConfiguration(Context context, String language) {
-
         Resources resources = context.getResources();
+        resources2 = context.getResources().getSystem();
         DisplayMetrics dm = resources.getDisplayMetrics();
         Configuration configuration = resources.getConfiguration();
         Locale locale = null;
         switch (language) {
             case Constants.CN:
                 Log.i(TAG, "updateConfiguration:cn");
-                locale = Locale.SIMPLIFIED_CHINESE;
+                locale = Locale.ENGLISH;
                 break;
             case Constants.EN:
                 Log.i(TAG, "updateConfiguration:en ");
@@ -57,8 +58,9 @@ public class MySdk {
                 break;
         }
         configuration.locale = locale;
-        Locale.setDefault(locale);
-        resources.updateConfiguration(configuration,dm);
+//        Locale.setDefault(locale);
+        resources.updateConfiguration(configuration, dm);
+        Log.i(TAG, "updateConfiguration: " +  configuration.locale.getDisplayName() + ",2:" + Locale.getDefault().getDisplayLanguage());
 //        ( (Activity)context).recreate();
     }
 }

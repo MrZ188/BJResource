@@ -44,4 +44,6 @@ dependencies {
     implementation 'com.squareup.retrofit2:adapter-rxjava:latest.integration'
     implementation 'com.squareup.retrofit2:converter-gson:latest.integration'
     implementation 'com.meituan.robust:robust:0.3.3'
+
+    implementation 'com.android.billingclient:billing:1.1'
 }
